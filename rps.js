@@ -1,11 +1,8 @@
-let computerSelection = '';
-let playerSelection = '';
-
+let computerSelection;
+let playerSelection;
 /* Determine the computer's move */
 function computerPlay() {
-    let randomNumber = Math.random().toFixed(2);
-    let computerSelection = '';
-    
+    let randomNumber = Math.random().toFixed(2);    
     if (randomNumber <= 0.33) {
         computerSelection = 'Rock';
     } else if (randomNumber > 0.33 && randomNumber <= 0.66) {
@@ -13,20 +10,23 @@ function computerPlay() {
     } else {
         computerSelection = 'Scissors';
     }
-    return computerSelection.toLowerCase();
+    return computerSelection
 }
 
 /* Get Player's selection */
 function getPlayerSelection() {
     playerSelection = prompt(`Rock, Paper, or Scissors?`, '');
-    playerSelection.toLowerCase();
-    return playerSelection;
+    return playerSelection
 }
 
 /* Play one round */
  function quickPlay() {
     getPlayerSelection();
     computerPlay();
+    playerSelection.toLowerCase();
+    computerSelection.toLowerCase();
+    console.log(typeof(computerSelection));
+    console.log(typeof(playerSelection));
     playRound(playerSelection, computerSelection);
 }
 
