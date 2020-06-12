@@ -10,22 +10,24 @@
         let playerScore = 0;
         let playerSelection = ``;
         let ComputerSelection = ``;
+        let winner = false;
 
         function game() {
-           if (computerScore < 5 && playerScore < 5) {
-               computerSelection = computerPlay();
-               playerSelection = getPlayerSelection();
-               playRound(playerSelection, computerSelection);
-               console.log(`Player score: ${playerScore} : Computer Score: ${computerScore}`);
-           } else if (computerScore == 5) {
-              console.log(`Computer wins! ${computerScore} to ${playerScore}`)
-              computerScore = 0;
-              playerScore = 0;
-           } else if ( playerScore == 5) {
-               console.log(`Player wins! ${playerScore} to ${computerScore}`);
-               computerScore = 0;
-               playerScore = 0;
-           }
+            if (playerScore == 5 || computerScore == 5) {
+                declareWinner(playerScore, computerScore);
+            } else {
+                playerSelection = getPlayerSelection();
+                computerSelection = computerPlay();
+                playRound(playerSelection, computerSelection);
+            }
+        }
+
+        function declareWinner(playerScore, computerScore) {
+            if (playerScore == 5) {
+                console.log("Player wins.");
+            } else if(computerScore == 5) {
+                console.log("Computer wins.");
+            }
         }
         
         function computerPlay() {
@@ -50,6 +52,7 @@
 
         function playRound(playerSelection, computerSelection) {
             if (playerSelection == computerSelection) {
+                    console.log(`It's a draw!`)
                     return "It\'s a draw!";
                 } else if ((playerSelection == 'rock') && (computerSelection == 'paper')){
                     computerScore++;
@@ -70,7 +73,7 @@
                     computerScore++;
                     return "You lose. Rock beats scissors.";
                 } else {
-                    return "Nothing chosen, player surrenders!";
+                    return 'Something went wrong';
                 }
             } 
         </script>
