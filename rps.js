@@ -22,7 +22,7 @@ function getPlayerSelection() {
  function quickPlay() {
     const playerSelection = getPlayerSelection();
     const computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
 }
 
 /* Play 5 rounds */
@@ -35,15 +35,19 @@ function game() {
         let result = playRound(getPlayerSelection(), computerPlay())
         if (result.includes('You Win')) {
             playerScore++;
-            return result;
+            console.log(result);
         } else if (result.includes('You Lose')) {
             computerScore++;
-            return result;
-        } else {
+            console.log(result);
+        } else if (result.includes(``) || result.includes(`Invalid Selection`)) {
+            computerScore++;
+            console.log(result);
+         } else {
             numberOfDraws++;
-            return result;
+            console.log(result);
         }
-    } i++;
+        i++;
+    }
 
     if (playerScore > computerScore) {
         console.log(`You Win! Player: ${playerScore} to Computer: ${computerScore}: draws: ${numberOfDraws}`);
@@ -52,6 +56,7 @@ function game() {
     } else {
         console.log(`You lose! Player: ${playerScore} to Computer: ${computerScore}: draws: ${numberOfDraws} `);
     }
+
 }
 
 
@@ -74,7 +79,7 @@ function playRound(playerSelection, computerSelection) {
         } else if ((playerSelection == 'scissors') && (computerSelection == 'rock')) {
             result = "You Lose. Rock beats scissors.";
         } else {
-            result = 'Something went wrong';
+            result = 'Invalid Selection; Computer Wins';
         }
     } return result; 
 }
