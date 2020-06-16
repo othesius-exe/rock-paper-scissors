@@ -8,7 +8,9 @@ let computerScoreInt = 0;
 
 clearBoard.addEventListener('click', (e) => {
     playerScore.textContent = '0';
+    playerScoreInt = 0;
     computerScore.textContent = '0';
+    computerScoreInt = 0;
     scoreBoard.textContent = 'Choose Your Weapon';
 })
 
@@ -87,6 +89,6 @@ function playRound(playerSelection, computerSelection) {
         } else {
             result = 'Invalid Selection; Computer Wins';
         }
-
+    
     } return result; 
 }
