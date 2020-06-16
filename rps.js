@@ -54,6 +54,20 @@ buttons.forEach((button ) => {
     console.log(playRound(playerSelection, computerSelection));
 }
 
+function declareWinner() {
+    if (playerScoreInt > computerScoreInt) {
+        alert("Congratulations! You Won best out of 5");
+    } else {
+        alert("Bummer, you lost this round. Try again!");
+    }
+
+    playerScore.textContent = '0';
+    playerScoreInt = 0;
+    computerScore.textContent = '0';
+    computerScoreInt = 0;
+    scoreBoard.textContent = 'Choose Your Weapon';
+}
+
 
 /* Compare Players selection to Computer's selection */
 function playRound(playerSelection, computerSelection) {
@@ -88,6 +102,10 @@ function playRound(playerSelection, computerSelection) {
             computerScore.textContent = `${computerScoreInt}`
         } else {
             result = 'Invalid Selection; Computer Wins';
+        }
+
+        if (playerScoreInt === 5 || computerScoreInt === 5) {
+            declareWinner();
         }
     
     } return result; 
