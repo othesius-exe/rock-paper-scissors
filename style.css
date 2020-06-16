@@ -1,0 +1,74 @@
+#container {
+    width: 100%;
+    padding-top: 100px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#startButtonContainer {
+    width: 100%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+#clearBoard {
+    width:  150px;
+    margin: 15px;
+}
+
+#rock {
+    width:  150px;
+    margin: 15px;
+}
+
+#paper {
+    width:  150px;
+    margin: 15px;
+}
+
+#scissors {
+    width:  150px;
+    margin: 15px;
+}
+
+.moveSelector {
+    width: 100px;
+    align-self: center;
+}
+
+#resultsContainer {
+    width: 100%;
+    height: 200px;
+    flex-direction: row;
+}
+
+#resultsBoard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+    color: red;
+}
+
+#scoreBoard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    padding-top: 50px;
+}
+
+#playerScore {
+    margin-right: 100px;
+    width: auto;
+}
+
+#computerScore {
+    margin-left: 100px;
+    width: auto;
+}

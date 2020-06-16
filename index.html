@@ -2,9 +2,27 @@
 <html>
     <head>
         <title>Rock Paper Scissors Sim</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
         <meta charset="UTF-8"/>
     </head>
     <body>
+        <div id="container">
+                <div id="startButtonContainer">
+                    <button id="clearBoard">Clear Board</button>
+                </div>
+                <div id="moveSelectorContainer">
+                     <button class="moveSelector" id="rock" value='rock'>ROCK</button>
+                     <button class="moveSelector" id="paper" value='paper'>PAPER</button>
+                     <button class="moveSelector" id="scissors" value='scissors'>SCISSORS</button>
+                </div>
+            <div id="resultsContainer">
+                <div id='resultsBoard'>Choose Your Weapon</div>
+            <div id='scoreBoard'>
+                <div id='playerScore'>0</div>
+                <div id='computerScore'>0</div>
+            </div>
+            </div>
+        </div>
         <script src='rps.js'></script>
     </body>
 </html>
